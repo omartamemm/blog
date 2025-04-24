@@ -12,7 +12,7 @@ require_once "core/validation.php";
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 
-
+show_message();
 
 
 switch ($page) {
@@ -24,6 +24,32 @@ switch ($page) {
         include "./views/auth/register.php";
 
         break;
+    case 'sign_in':
+        include "./controller/control_register.php";
+
+        break;
+    case 'profile':
+        include "./views/profile.php";
+
+        break;
+
+    case 'logout':
+        include "./views/auth/logout.php";
+
+        break;
+
+
+        case 'login':
+            include "./views/auth/login.php";
+    
+            break;
+
+        case 'handel_login':
+            include "./controller/control_login.php";
+    
+            break;
+                 
+
 
 
     default:

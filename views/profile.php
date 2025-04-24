@@ -1,5 +1,9 @@
 
-<?php include"layout/header&nav.php" ?>
+<?php 
+if (isset($_SESSION['user_name'])) :
+
+?>
+
     <main class="container mt-4">
         <h2>Your Posts</h2>
         <div class="card post-card">
@@ -21,6 +25,16 @@
         </div>
         
         <!-- Add more posts as needed -->
+
+            <a href="index.php?page=logout" class="btn btn-danger btn-sm mt-4">LOGOUT</a>
+
     </main>
 
-     <?php include"layout/footer.php";?> 
+
+
+<?php endif;?>
+
+<?php
+header("location:index.php?page=login");
+exit;
+?>
