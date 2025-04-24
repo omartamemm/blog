@@ -7,9 +7,25 @@
     <title>Blog App</title>
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-4">
-        <h1>My Blog</h1>
-        <p>Welcome to my blog!</p>
+    <header class="bg-primary text-white text-center py-8">
+      
+        <?php 
+        if (isset($_SESSION['user_name'])) {
+           echo" <p class='pt-3'> Welcome Mr/".$_SESSION['user_name']."</p>";
+           echo " <h5>at</h5>";
+
+           echo " <h5>Tamem Blog</h5>";
+
+
+            
+        }else{
+            echo " <h5>Tamem Blog</h5>";
+
+
+        }
+
+        ?>
+        
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -2,6 +2,7 @@
 session_start();
 
 
+
 include "config.php";
 include "views/layout/header&nav.php";
 require_once "config/db.php";
@@ -48,11 +49,18 @@ switch ($page) {
             include "./controller/control_login.php";
     
             break;
+
+            case 'add_post':
+                include "./views/create_post.php";
+        
+                break;
                  
 
 
 
     default:
+    include "./views/maintenance.php";
+
         # code...
         break;
 }

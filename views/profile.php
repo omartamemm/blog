@@ -27,14 +27,19 @@ if (isset($_SESSION['user_name'])) :
         <!-- Add more posts as needed -->
 
             <a href="index.php?page=logout" class="btn btn-danger btn-sm mt-4">LOGOUT</a>
+            <a href="index.php?page=add_post" class="btn btn-success btn-sm mt-4">ADD POST</a>
+
 
     </main>
 
 
 
-<?php endif;?>
+<?php 
+else :
+    header("location:index.php?page=login");
+    exit;
+endif;
 
-<?php
-header("location:index.php?page=login");
-exit;
+
 ?>
+
