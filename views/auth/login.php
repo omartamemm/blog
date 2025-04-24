@@ -3,7 +3,7 @@
     <div class="container">
         <div class="login-form">
             <h2 class="text-center">Login</h2>
-            <form method="POST" action="index.php?page=handel_login">
+            <form method="POST" action="index.php?page=control_login">
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="" class="form-control" id="email" placeholder="Enter your email" name="login_email" >

@@ -38,6 +38,6 @@ function user_login ($email,$password){
         return mysqli_fetch_assoc($res);
     }
     else{
-        return false;
+        return null;
     }
 }

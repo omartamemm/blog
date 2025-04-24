@@ -44,7 +44,7 @@ switch ($page) {
     
             break;
 
-        case 'handel_login':
+        case 'control_login':
             include "./controller/control_login.php";
     
             break;
