@@ -57,13 +57,31 @@ function get_blogs($id){
 
 }
 
-function add_blog($title,$content,$id){
+function add_blog($title,$content,$image,$id){
     $conn=$GLOBALS['conn'];
-    $sql = "INSERT INTO `posts`(title,content,users_id)VALUES('$title','$content','$id');";
-    $res= mysqli_query($conn,$sql);
-    return $res;
- 
+
+    $file_name=$image['name'];
+
+    $full_path=realpath(__DIR__."/../../assets/imgs/blogs")."/".$file_name;
+
+    $realtive_path="/assets/imgs/blogs".$file_name;
+
+    $m=move_uploaded_file($image['tmp_name'],$full_path);
+    if (!$m) 
+    {
+      return "faild to uplod image";
+    }
    
+    $sql = "INSERT INTO `posts` (title,content,image,users_id) VALUES('$title','$content','$realtive_path','$id');";
+    $res=mysqli_query($conn,$sql);
+
+    if ($res) {
+       return true;
+    }else {
+        return false;
+    }
+
+
 }
 
 

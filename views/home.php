@@ -15,12 +15,7 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .footer {
-        background-color: #343a40;
-        color: white;
-        padding: 20px 0;
-        position: relative;
-    }
+   
 
     .card-title {
         font-size: 1.5rem;

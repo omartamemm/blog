@@ -1,8 +1,9 @@
 
     <div class="container">
         <div class="create-post-form">
-            <h2 class="text-center">Create a New Post</h2>
-            <form method="POST" action="index.php?page=add_blog">
+            <h2 class="text-center">Create a New blog;</h2>
+            <form method="POST" action="index.php?page=add_blog" enctype="multipart/form-data">
+                
                 <div class="form-group">
                     <label for="title">Post Title</label>
                     <input type="text" class="form-control" id="title" placeholder="Enter post title"  name="title">
@@ -13,7 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Upload Image</label>
-                    <input type="file" class="form-control-file" id="image" >
+                    <input type="file" class="form-control-file" id="image" name="image">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Create Post</button>
             </form>

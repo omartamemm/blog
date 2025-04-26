@@ -22,6 +22,7 @@ if ($eror) {
    exit;
 }
 
+
 $res=add_user($name,$email,$phone,$password);
 if($res){
    

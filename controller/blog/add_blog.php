@@ -5,20 +5,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
+    $image=$_FILES['image'];
 
-    if ($title=="" || $content=="") {
-        set_message("danger","please write title and content");
-        header("location:index.php?page=create_blog");
-        exit;
-    }
+   $eror= validate_blog($title,$content,$image);
+   if (!empty($eror)) {
+    set_message("danger",$eror);
+    header("location:index.php?page=create_blog");
+    exit;
+ }
 
-    $res = add_blog($title, $content, $_SESSION['user_id']);
+    
 
-    if ($res) {
+    
 
-        set_message("success", "blog added sucessfully ");
-        header("location:index.php?page=profile");
-        exit;
-    }
+    
+
+     $res = add_blog($title, $content,$image ,$_SESSION['user_id']);
+     var_dump($res);
+
+    // if ($res) {
+
+    //     set_message("success", "blog added sucessfully ");
+    //     header("location:index.php?page=profile");
+    //     exit;
+    // }
 
 }

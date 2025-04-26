@@ -91,3 +91,28 @@ function validate_login($email,$password){
 
 
 }
+
+
+function validate_blog($tilte,$content,$image){
+    $arr = [
+     
+        "title"=>$tilte,
+        "content"=>$content,
+        "image"=>$image
+    ];
+    foreach ($arr as $key => $value) {
+
+        if ($eror = validate($value, $key)) {
+            return $eror;
+        }
+
+    }
+    
+
+    
+  
+        return $eror;
+    
+
+
+}
