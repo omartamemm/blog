@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $res = user_login($login_email, $login_password);
   
      if($res) {
-        var_dump($res)."<hr>";
+        // var_dump($res)."<hr>";
         $_SESSION['user_name']=$res['name'];
         $_SESSION['user_id']=$res['id'];
         
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
          exit;
         
      }
+
    
 
 

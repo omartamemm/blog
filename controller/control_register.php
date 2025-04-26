@@ -24,9 +24,8 @@ if ($eror) {
 
 $res=add_user($name,$email,$phone,$password);
 if($res){
-    $_SESSION['user_name']=$name;
-    $_SESSION['user_email']=$email;
-    header("location:index.php?page=profile");
+   
+    header("location:index.php?page=login");
     exit;
 
 }

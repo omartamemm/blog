@@ -41,3 +41,44 @@ function user_login ($email,$password){
         return null;
     }
 }
+
+function get_blogs($id){
+    $conn=$GLOBALS['conn'];
+    $sql = "SELECT * FROM `posts` WHERE users_id='$id';";
+    $res= mysqli_query($conn,$sql);
+    if(mysqli_num_rows($res)>0){
+        return $res;
+    }
+    else{
+        return null;
+    }
+
+
+
+}
+
+function add_blog($title,$content,$id){
+    $conn=$GLOBALS['conn'];
+    $sql = "INSERT INTO `posts`(title,content,users_id)VALUES('$title','$content','$id');";
+    $res= mysqli_query($conn,$sql);
+    return $res;
+ 
+   
+}
+
+
+
+function get_all_blogs(){
+    $conn=$GLOBALS['conn'];
+    $sql = "SELECT name,title,content,create_at FROM `users` INNER JOIN `posts` ON(users.id=posts.users_id);";
+    $res= mysqli_query($conn,$sql);
+    if(mysqli_num_rows($res)>0){
+        return $res;
+    }
+    else{
+        return null;
+    }
+
+
+
+}

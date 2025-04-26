@@ -40,26 +40,31 @@ switch ($page) {
         break;
 
 
-        case 'login':
-            include "./views/auth/login.php";
+    case 'login':
+        include "./views/auth/login.php";
+
+        break;
+
+    case 'control_login':
+        include "./controller/control_login.php";
+
+        break;
+
+    case 'create_blog':
+        include "./views/blogs/create_blog.php";
+
+        break;
+
+        case 'add_blog':
+            include "./controller/blog/add_blog.php";
     
             break;
 
-        case 'control_login':
-            include "./controller/control_login.php";
-    
-            break;
-
-            case 'add_post':
-                include "./views/create_post.php";
-        
-                break;
-                 
 
 
 
     default:
-    include "./views/maintenance.php";
+        include "./views/maintenance.php";
 
         # code...
         break;

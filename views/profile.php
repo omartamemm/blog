@@ -1,33 +1,61 @@
 
 <?php 
+     echo"<h2>Your Posts</h2>";
+
 if (isset($_SESSION['user_name'])) :
+
+    $blog_res=get_blogs($_SESSION['user_id']);
+
 
 ?>
 
+
     <main class="container mt-4">
-        <h2>Your Posts</h2>
-        <div class="card post-card">
-            <div class="card-body">
-                <h5 class="card-title">Post Title 1</h5>
-                <p class="card-text">This is a brief description of your first post.</p>
-                <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </div>
-        </div>
+
+    <?php if($blog_res):  
         
-        <div class="card post-card">
-            <div class="card-body">
-                <h5 class="card-title">Post Title 2</h5>
-                <p class="card-text">This is a brief description of your second post.</p>
-                <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+        
+        
+       while ($row = mysqli_fetch_assoc($blog_res)) {
+
+       
+        echo"<div class='card post-card'>
+            <div class='card-body'>
+                <h5 class='card-title'>{$row['title']}</h5>
+                <p class='card-text'>{$row['content']}</p>
+                <button class='btn btn-warning'>Edit</button>
+                <button class='btn btn-danger'>Delete</button>
             </div>
-        </div>
+        </div>";
+       }
+        
+        
+        
+        ?>
+
+        
+
+
+
+        
+
+        
+        
+        <?php
+    else: 
+        echo " <h2>No posts yet</h2>";
+    
+    
+    endif; ?>
+          
+        
+
+
         
         <!-- Add more posts as needed -->
 
             <a href="index.php?page=logout" class="btn btn-danger btn-sm mt-4">LOGOUT</a>
-            <a href="index.php?page=add_post" class="btn btn-success btn-sm mt-4">ADD POST</a>
+            <a href="index.php?page=create_blog" class="btn btn-success btn-sm mt-4">ADD POST</a>
 
 
     </main>
